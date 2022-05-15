@@ -1,5 +1,11 @@
 # Sample Spring Boot API
 
+## Quick Start
+
+```
+./gradlew bootRun
+```
+
 ## Reference
 
 REST API の作成
