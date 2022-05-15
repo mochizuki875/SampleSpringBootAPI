@@ -35,7 +35,6 @@ public class SampleApiController {
 				System.out.println("Case 1");
 			} 
 			if(num == 2) { // num=2なら500エラー
-//				throw new Exception();
 				throw new HttpServerErrorException(null);
 			}
 			
@@ -52,9 +51,6 @@ public class SampleApiController {
 		catch (HttpServerErrorException e) {
 			throw e;
 		} 
-//		catch (Exception e) {
-//			return new Response(num, null);
-//		}
 	}
 
 }
