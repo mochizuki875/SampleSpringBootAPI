@@ -21,6 +21,7 @@ public class SampleApiController {
 		String URL = "http://127.0.0.1:8082/api2/?num={num}";
 		
 		try {
+			// API2のレスポンスの型に合わせたクラスを用意してレスポンスを受け取る
 			Response response = restTemplate.getForObject(URL, Response.class, num); // リクエスト実行
 			return response; // インスタンスの属性がJSON形式でレスポンスになる
 		}

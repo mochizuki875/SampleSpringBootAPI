@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -35,7 +36,7 @@ public class SampleApiController {
 				System.out.println("Case 1");
 			} 
 			if(num == 2) { // num=2なら500エラー
-				throw new HttpServerErrorException(null);
+				throw new HttpServerErrorException(HttpStatus.BAD_GATEWAY, "Internal Server Error");
 			}
 			
 			// 上で作成した値を用いてResponseインスタンスを作成
