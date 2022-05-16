@@ -31,11 +31,14 @@ public class SampleApiController {
 		Value value = new Value(message, id, names);  // @AllArgsConstructorにより生成されたコンストラクタを利用
 		
 		try {
-			
 			if(num == 1) { // num=1なら一定時間sleep
-				System.out.println("Case 1");
-			} 
-			if(num == 2) { // num=2なら500エラー
+				System.out.println("sleep");
+				try {
+		            Thread.sleep(3000);
+		        } catch(InterruptedException e){
+		            e.printStackTrace();
+		        }
+			} else if (num == 2) { // num=2なら500エラー
 				throw new HttpServerErrorException(HttpStatus.BAD_GATEWAY, "Internal Server Error");
 			}
 			
